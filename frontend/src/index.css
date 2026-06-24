@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --orange: #ff6b00;
+  --orange-light: #ff8c33;
+  --orange-glow: rgba(255, 107, 0, 0.35);
+  --green: #1f7a63;
+  --green-light: #26a085;
+  --green-glow: rgba(31, 122, 99, 0.35);
+  --bg: #0a0a0a;
+  --bg-card: #111111;
+  --bg-surface: #181818;
+  --bg-elevated: #1f1f1f;
+  --border: rgba(255,255,255,0.07);
+  --border-active: rgba(255, 107, 0, 0.4);
+  --text-primary: #f0f0f0;
+  --text-secondary: #a0a0a0;
+  --text-muted: #555;
+  --radius: 16px;
+  --radius-sm: 10px;
+  --radius-lg: 24px;
+  --shadow-card: 0 4px 32px rgba(0,0,0,0.5);
+  --shadow-glow: 0 0 40px rgba(255, 107, 0, 0.2);
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background: var(--bg);
+  color: var(--text-primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; display: block; }
+button { cursor: pointer; font-family: inherit; }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--orange); border-radius: 3px; }
+
+/* Utility */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+.section { padding: 100px 0; }
+.section-tag {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(255,107,0,0.1); border: 1px solid rgba(255,107,0,0.3);
+  color: var(--orange); padding: 6px 16px; border-radius: 50px;
+  font-size: 13px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.section-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800; line-height: 1.1;
+  background: linear-gradient(135deg, #fff 0%, #a0a0a0 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 16px;
+}
+.section-subtitle { color: var(--text-secondary); font-size: 1.05rem; max-width: 560px; }
+
+/* Buttons */
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 14px 30px; border-radius: 50px; font-size: 15px;
+  font-weight: 600; border: none; transition: var(--transition);
+  position: relative; overflow: hidden; white-space: nowrap;
+}
+.btn-primary {
+  background: linear-gradient(135deg, var(--orange), var(--orange-light));
+  color: #fff;
+  box-shadow: 0 4px 20px var(--orange-glow);
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(255,107,0,0.5);
+}
+.btn-outline {
+  background: transparent;
+  border: 1.5px solid var(--border-active);
+  color: var(--orange);
+}
+.btn-outline:hover {
+  background: rgba(255,107,0,0.1);
+  transform: translateY(-2px);
+}
+.btn-green {
+  background: linear-gradient(135deg, var(--green), var(--green-light));
+  color: #fff;
+  box-shadow: 0 4px 20px var(--green-glow);
+}
+.btn-green:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(31,122,99,0.5); }
+
+/* Card base */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  transition: var(--transition);
+}
+.card:hover {
+  border-color: rgba(255,107,0,0.25);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, var(--orange), #ffaa00);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Toast */
+.toast {
+  position: fixed; bottom: 28px; right: 28px; z-index: 9999;
+  padding: 14px 22px; border-radius: var(--radius-sm);
+  font-size: 14px; font-weight: 500;
+  display: flex; align-items: center; gap: 10px;
+  animation: slideUp 0.35s ease;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+}
+.toast-success { background: var(--green); color: #fff; }
+.toast-error { background: #c0392b; color: #fff; }
+.toast-info { background: var(--orange); color: #fff; }
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Stars */
+.stars { color: #f5c518; letter-spacing: 2px; }

@@ -1,0 +1,75 @@
+.navbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  padding: 20px 0;
+  transition: all 0.3s ease;
+}
+.scrolled {
+  background: rgba(10, 10, 10, 0.92);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  padding: 12px 0;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.4);
+}
+.inner {
+  display: flex; align-items: center; justify-content: space-between; gap: 24px;
+}
+.logo {
+  font-size: 1.6rem; font-weight: 900; letter-spacing: -0.5px;
+  display: flex; align-items: center; gap: 6px;
+}
+.logoIcon { font-size: 1.3rem; }
+.logoAccent { color: var(--orange); }
+
+.links {
+  display: flex; list-style: none; align-items: center; gap: 4px;
+  flex: 1; justify-content: center;
+}
+.link {
+  padding: 8px 16px; border-radius: 50px; font-size: 14px; font-weight: 500;
+  color: var(--text-secondary); transition: var(--transition);
+}
+.link:hover, .active {
+  color: var(--text-primary);
+  background: rgba(255,255,255,0.06);
+}
+.active { color: var(--orange); }
+
+.actions {
+  display: flex; align-items: center; gap: 12px;
+}
+.loginLink {
+  font-size: 14px; font-weight: 500; color: var(--text-secondary);
+  transition: var(--transition);
+}
+.loginLink:hover { color: var(--text-primary); }
+.userBtn {
+  display: flex; align-items: center; gap: 6px;
+  background: rgba(255,107,0,0.12); border: 1px solid rgba(255,107,0,0.3);
+  color: var(--orange); padding: 8px 16px; border-radius: 50px;
+  font-size: 14px; font-weight: 500; transition: var(--transition);
+}
+.userBtn:hover { background: rgba(255,107,0,0.22); }
+.logoutBtn {
+  background: rgba(255,255,255,0.06); border: 1px solid var(--border);
+  color: var(--text-secondary); padding: 8px 10px; border-radius: 50px;
+  transition: var(--transition);
+}
+.logoutBtn:hover { color: #e74c3c; border-color: rgba(231,76,60,0.4); }
+
+.hamburger {
+  display: none; background: none; border: none; color: var(--text-primary); padding: 4px;
+}
+
+@media (max-width: 768px) {
+  .hamburger { display: flex; }
+  .links {
+    position: fixed; top: 0; right: 0; bottom: 0; width: 70%;
+    background: var(--bg-surface); flex-direction: column; justify-content: center;
+    padding: 32px; gap: 8px; transform: translateX(110%);
+    transition: transform 0.35s cubic-bezier(0.4,0,0.2,1);
+    box-shadow: -8px 0 40px rgba(0,0,0,0.5);
+    border-left: 1px solid var(--border);
+  }
+  .open { transform: translateX(0); }
+  .link { font-size: 18px; padding: 14px 20px; }
+}

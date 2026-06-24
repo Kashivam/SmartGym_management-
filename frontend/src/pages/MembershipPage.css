@@ -1,0 +1,53 @@
+/* ── Membership Page ──────────────────────────────── */
+.mp-page { min-height: 100vh; background: #0a0a0a; }
+
+.mp-hero {
+  position: relative; padding: 130px 0 20px;
+  text-align: center; overflow: hidden;
+}
+.mp-hero-bg {
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(255,107,53,0.16) 0%, transparent 70%);
+}
+.mp-title {
+  font-size: clamp(32px, 5vw, 52px); font-weight: 900;
+  color: #fff; margin: 12px 0 16px; line-height: 1.15;
+}
+.mp-sub { font-size: 16px; color: rgba(255,255,255,0.55); max-width: 500px; margin: 0 auto; }
+
+/* Perks */
+.mp-perks { padding: 60px 0; background: rgba(255,255,255,0.02); border-top: 1px solid rgba(255,255,255,0.05); }
+.mp-perks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 20px;
+}
+.mp-perk-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 16px; padding: 24px 22px;
+  transition: transform 0.2s, border-color 0.2s;
+}
+.mp-perk-card:hover { transform: translateY(-4px); border-color: rgba(255,107,53,0.3); }
+.mp-perk-icon { font-size: 32px; display: block; margin-bottom: 14px; }
+.mp-perk-card h4 { font-size: 16px; font-weight: 700; color: #fff; margin-bottom: 8px; }
+.mp-perk-card p { font-size: 14px; color: rgba(255,255,255,0.5); line-height: 1.6; }
+
+/* FAQ */
+.mp-faq { padding: 60px 0 80px; }
+.mp-faq-inner { max-width: 720px; margin: 0 auto; }
+.mp-faq-inner .section-title { margin-bottom: 36px; }
+.mp-faq-list { display: flex; flex-direction: column; gap: 14px; }
+.mp-faq-item {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px; padding: 20px 22px;
+  transition: border-color 0.2s;
+}
+.mp-faq-item:hover { border-color: rgba(255,107,53,0.25); }
+.mp-faq-q {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 10px;
+}
+.faq-icon { color: #ff6b35; flex-shrink: 0; }
+.mp-faq-a { font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.7; padding-left: 24px; }

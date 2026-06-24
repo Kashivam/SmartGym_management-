@@ -1,0 +1,65 @@
+.section { background: var(--bg-card); }
+.header { text-align: center; margin-bottom: 64px; }
+.header .section-subtitle { margin: 0 auto; }
+
+.grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;
+}
+
+.card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: var(--transition);
+}
+.card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(255,107,0,0.3);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+.card:hover .img { transform: scale(1.08); }
+.card:hover .imgOverlay { opacity: 1; }
+
+.imgWrapper { position: relative; height: 240px; overflow: hidden; }
+.img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+.imgOverlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(10,10,10,0.7), transparent);
+  opacity: 0; transition: var(--transition);
+}
+.exp {
+  position: absolute; top: 14px; right: 14px;
+  background: rgba(255,107,0,0.9); color: #fff;
+  padding: 4px 10px; border-radius: 50px; font-size: 12px; font-weight: 700;
+}
+
+.info { padding: 22px; }
+.name { font-size: 1.1rem; font-weight: 700; margin-bottom: 4px; }
+.spec { color: var(--orange); font-size: 13px; font-weight: 500; margin-bottom: 10px; }
+.rating {
+  display: flex; align-items: center; gap: 8px; margin-bottom: 14px;
+}
+.stars { color: #f5c518; font-size: 15px; }
+.ratingNum {
+  font-size: 13px; color: var(--text-secondary); font-weight: 600;
+}
+
+.certs { display: flex; gap: 8px; flex-wrap: wrap; }
+.cert {
+  background: rgba(31,122,99,0.15); border: 1px solid rgba(31,122,99,0.3);
+  color: var(--green-light); padding: 3px 10px; border-radius: 50px;
+  font-size: 11px; font-weight: 600;
+}
+
+.loadingGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+.skeleton {
+  height: 340px; border-radius: var(--radius);
+  background: linear-gradient(90deg, var(--bg-surface) 25%, var(--bg-elevated) 50%, var(--bg-surface) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+@keyframes shimmer { to { background-position: -200% 0; } }
+
+@media (max-width: 900px) { .grid, .loadingGrid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .grid, .loadingGrid { grid-template-columns: 1fr; } }
